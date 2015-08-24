@@ -21,8 +21,10 @@
   "homepage": "https://github.com/wesleyanemam/h5-play",
   "scripts": {
     "es6to5": "node node_modules/babel/bin/babel --optional runtime app --out-dir build",
+    "copy": "cd app && find . -name \\*.html -exec cp --parents {} ../build \\; && cd ..",
     "watch": "node node_modules/watch/cli.js 'npm test' app",
-    "test": "clear && npm run es6to5 && node build/index.js ~/Videos"
+    "build": "npm run clean && npm run es6to5 && npm run copy",
+    "test": "clear && npm run build && node build/index.js ~/Videos"
   },
   "devDependencies": {
     "babel": "^5.8.21",
