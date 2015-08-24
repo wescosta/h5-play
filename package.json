@@ -22,12 +22,14 @@
   "scripts": {
     "es6to5": "node node_modules/babel/bin/babel --optional runtime app --out-dir build",
     "copy": "cd app && find . -name \\*.html -exec cp --parents {} ../build \\; && cd ..",
+    "browserify": "node node_modules/browserify/bin/cmd.js build/node_modules/www/video.js -o build/node_modules/www/video-bundle.js",
     "watch": "node node_modules/watch/cli.js 'npm test' app",
-    "build": "npm run clean && npm run es6to5 && npm run copy",
+    "build": "npm run clean && npm run es6to5 && npm run browserify && npm run copy",
     "test": "clear && npm run build && node build/index.js ~/Videos"
   },
   "devDependencies": {
     "babel": "^5.8.21",
+    "browserify": "^11.0.1",
     "watch": "^0.16.0"
   },
   "dependencies": {
