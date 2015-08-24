@@ -6,7 +6,10 @@ import * as file   from 'serializer'
 
 async.task(
 	videos.lookup().then(
-		list => file.serialize(`${__dirname}/node_modules/www/videos.json`, list).then(
+		list => file.serialize(
+			`${__dirname}/node_modules/www/generated-list.js`, 
+			`window.videos = ${JSON.stringify(list)}`
+		).then(
 			msg => console.log(msg)
 		)
 	),
