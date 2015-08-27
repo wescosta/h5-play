@@ -6,11 +6,12 @@ import * as file    from 'serializer'
 import * as browser from 'browser'
 
 let folders = {
-	www: `${__dirname}/node_modules/www` 
+	www: `${__dirname}/node_modules/www`,
+	videos: process.argv[2] || __dirname
 }
 
 async.task(
-	videos.lookup().then(
+	videos.lookup(folders.videos).then(
 		list => file.serialize(
 			`${folders.www}/generated-list.js`, 
 			`window.videos = ${JSON.stringify(list)}`
