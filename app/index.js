@@ -2,10 +2,9 @@
 
 import electron from 'electron'
 
-import * as async   from 'async'
-import * as videos  from 'videos'
-import * as file    from 'serializer'
-import * as browser from 'browser'
+import * as async   from './async'
+import * as videos  from './videos'
+import * as file    from './serializer'
 
 const folders = {
 	www: `${__dirname}/node_modules/www`,
@@ -14,12 +13,8 @@ const folders = {
 
 const app = electron.app
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
 app.on('ready', load)
 
 // Quit when all windows are closed.
@@ -47,14 +42,7 @@ function load(){
 				`window.videos = ${JSON.stringify(list)}`
 			).then(() => {
 				let playlist = `file:///${folders.www}/index.html`
-
 				open(playlist)
-
-				/*browser.open(playlist).then(
-					loaded => console.log('Yep. Your playlist has been loaded. Enjoy!')
-				).catch(
-					error  => console.trace('Ops! Something went wrong. I could not open', playlist, error)
-				)*/
 			})
 		),
 	 'Looking for videos and preparing them to be loaded into the playlist'
