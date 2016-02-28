@@ -7,7 +7,7 @@ import * as videos  from './videos'
 import * as file    from './serializer'
 
 const folders = {
-	www: `${__dirname}/node_modules/www`,
+	www: `${__dirname}/www`,
 	videos: process.argv[2] || __dirname
 }
 

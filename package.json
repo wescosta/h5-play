@@ -37,7 +37,6 @@
   "dependencies": {
     "babel-runtime": "^5.8.20",
     "electron-prebuilt": "^0.36.8",
-    "glob": "^5.0.14",
-    "open": "0.0.5"
+    "glob": "^5.0.14"
   }
 }
