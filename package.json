@@ -20,13 +20,13 @@
   },
   "homepage": "https://github.com/wesleyanemam/h5-play",
   "scripts": {
-    "es6to5": "node node_modules/babel/bin/babel --optional runtime app --out-dir build",
-    "browserify": "node node_modules/browserify/bin/cmd.js build/www/video.js -o build/www/video-bundle.js",
+    "transpile": "node node_modules/babel/bin/babel --optional runtime app --out-dir build",
+    "bundle": "node node_modules/browserify/bin/cmd.js build/www/video.js -o build/www/video-bundle.js",
+    "copy:build": "cd app && find . -name \\*.html -exec cp --parents {} ../build \\; && cd ..",
+    "copy:publish": "cp LICENSE package.json README.md build/",
     "watch": "node node_modules/watch/cli.js 'npm test' app",
-    "copy-build": "cd app && find . -name \\*.html -exec cp --parents {} ../build \\; && cd ..",
-    "copy-publish": "cp LICENSE package.json README.md build/",
-    "build": "npm run es6to5 && npm run browserify && npm run copy-build",
-    "publish": "npm run build && npm run copy-publish && npm publish ./build --tag beta",
+    "build": "npm run transpile && npm run bundle && npm run copy:build",
+    "publish": "npm run build && npm run copy:publish && npm publish ./build --tag beta",
     "test": "clear && npm run build && electron build/index.js ~/Videos"
   },
   "devDependencies": {
