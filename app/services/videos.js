@@ -1,16 +1,17 @@
-'use strict'
+import remote from 'remote'
 
-var glob = require('glob')
+const Glob = remote.require('glob'),
+			FOLDER = process.argv[2] || __dirname,
+			SUPPORTED_VIDEO_FORMATS_GLOB = '**/*.{mp4,ogg,webm}'
 
-export const SUPPORTED_VIDEO_FORMATS_GLOB = '**/*.{mp4,ogg,webm}'
-
-export function lookup(folder = __dirname) {
+export function lookup(folder = FOLDER) {
 	return new Promise((resolve, reject) => {
-		new glob(SUPPORTED_VIDEO_FORMATS_GLOB, {cwd: folder, realpath: true}, (err, files) => {
+		new Glob(SUPPORTED_VIDEO_FORMATS_GLOB, {cwd: folder, realpath: true}, (err, files) => {
 			if (err)
 				reject(err)
-			else
+			else {
 				resolve(files)
+			}
 		})
 	})
 }
