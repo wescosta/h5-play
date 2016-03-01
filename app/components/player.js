@@ -2,8 +2,8 @@ import React from 'react'
 
 export default class Player extends React.Component {
   static defaultProps = {
-  	width: "50%",
-  	height: "50%",
+  	width: "100%",
+  	height: "100%",
   	autoPlay: true,
   	controls: true,
   }

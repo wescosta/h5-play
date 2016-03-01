@@ -8,19 +8,18 @@ export default class Playlist extends React.Component {
 	}
 
 	componentDidMount() {
-		videos.lookup().then(videos => {
-			console.log('loaded videos', videos)
-			this.state.videos = videos
-		})
+		videos.lookup().then(videos => this.setState({videos}))
 	}
 
 	render() {
-		var list = this.state.videos.map(video => {
-				<li>
-					<a href="#">video</a>
-				</li>
-			})
-
-		return <ul>{list}</ul>
+		return (
+			<ul>
+				{this.state.videos.map((video, index) => 
+					<li key={index}>
+						<a href="#">{video}</a>
+					</li>
+				)}
+			</ul>
+		)
 	}
 }
