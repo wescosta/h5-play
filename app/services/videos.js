@@ -10,7 +10,12 @@ export function lookup(folder = FOLDER) {
 			if (err)
 				reject(err)
 			else {
-				resolve(files)
+				//resolve(files) @todo - fix glob within Electron
+				resolve([
+						'/home/wesleyanemam/Videos/Training/ES6 in Angular 2.0 by Erik Arvidsson at ng-europe 2014.mp4'
+					, '/home/wesleyanemam/Videos/Training/Javascript- Understanding the Weird Parts - The First 3.5 Hours.mp4'
+					, ...files
+				])
 			}
 		})
 	})
