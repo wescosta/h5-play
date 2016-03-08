@@ -1,9 +1,14 @@
 import React, {Component, PropTypes} from 'react'
+import {noop} from '../utils'
 
 export default class Playlist extends Component {
 	static PropType = {
 		videos: PropTypes.array.isRequired,
 		onClick: PropTypes.func
+	}
+
+	static defaultProps = {
+		onClick: noop
 	}
 
 	render() {
