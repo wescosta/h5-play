@@ -26,10 +26,10 @@ class App extends React.Component {
 		}))
 	}
 
-	play = video => {
+	play = (video, time) => {
 		let current = {
 			src: video,
-			time: parseFloat(localStorage.getItem(video.toString()) || 0)
+			time: parseFloat(time || localStorage.getItem(video.toString()) || 0)
 		}
 
 		this.setState({current})
@@ -61,7 +61,7 @@ class App extends React.Component {
 	render(){
 		return (
 			<div>
-				<Playlist videos={this.state.videos} onClick={this.play}/>
+				<Playlist videos={this.state.videos} onClick={video => this.play(video, 0.1)}/>
 				<Player 
 					src={this.state.current.src} 
 					time={this.state.current.time} 
