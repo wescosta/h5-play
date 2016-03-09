@@ -14,11 +14,11 @@ export default class History extends Component {
 	}
 
 	render(){
-		return (
+		return this.props.videos.length ? (
 			<div>
 				<h2>Continue watching from where you left...</h2>
 				<Playlist {...this.props}/>
 			</div>
-		)
+		) : <div></div>
 	}
 }
