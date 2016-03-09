@@ -17,7 +17,8 @@ export default class Player extends Component {
     height: "100%",
     autoPlay: true,
     controls: true,
-    accessKey: 'v'
+    accessKey: 'v',
+    poster: 'assets/img/video-placeholder.jpg'
   }
 
   render() {
@@ -41,8 +42,6 @@ export default class Player extends Component {
       onError: saveProgress,
       onEnded: saveProgress
     }
-
-
 
   	return <video ref="video" {...this.props} {...events}></video>
   }
