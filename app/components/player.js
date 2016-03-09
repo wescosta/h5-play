@@ -22,11 +22,14 @@ export default class Player extends Component {
   }
 
   render() {
-    const saveProgress = () => this.props.saveProgress(
-      this.props.src,
-      this.refs.video.currentTime, 
-      this.refs.video.ended
-    )
+    const saveProgress = () => {
+      if (this.refs.video.currentTime > 0)
+        this.props.saveProgress(
+          this.props.src,
+          this.refs.video.currentTime, 
+          this.refs.video.ended
+        )
+    }
 
     const timeUpdate = () => {
       if (this.refs.video.currentTime < this.props.time)
