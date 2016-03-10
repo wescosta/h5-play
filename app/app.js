@@ -62,7 +62,7 @@ class App extends React.Component {
 		return (
 			<div className="wrapper">
 				<div>
-					<h1 className="h2">Videos</h1>
+					<h1 className="h2" style={{marginTop: '0px'}}>Videos</h1>
 					<Playlist videos={this.state.videos} onClick={video => this.play(video, 0.1)}/>
 				</div>
 				<div>
@@ -71,7 +71,7 @@ class App extends React.Component {
 						time={this.state.current.time} 
 						saveProgress={this.saveProgress}/>
 
-					<History videos={this.state.history} onClick={this.play}/>
+					<History videos={this.state.history} onClick={this.play} height="10vh"/>
 				</div>
 			</div>
 		)
