@@ -13,9 +13,9 @@ export default class Playlist extends Component {
 
 	render() {
 		return (
-			<ul>
+			<ul className="list-unstyled">
 				{this.props.videos.map((video, index) => 
-					<li key={index}>
+					<li key={index} style={{marginBottom: '10px'}}>
 						<a href="#" onClick={() => this.props.onClick(video)}>{video}</a>
 					</li>
 				)}

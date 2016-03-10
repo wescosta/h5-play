@@ -8,7 +8,7 @@ const app = electron.app,
 let mainWindow
 
 let load = () => {
-  mainWindow = new electron.BrowserWindow({width: 1200, height: 600})
+  mainWindow = new electron.BrowserWindow({width: 1250, height: 650})
   mainWindow
     .on('closed', () => mainWindow = null)
     .loadURL(url)

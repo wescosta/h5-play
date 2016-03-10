@@ -2,7 +2,7 @@
 
 An experimental app which creates video playlists from a folder, keeps track of where you stopped watching and plays videos in the default browser.
 
-For the fun of it, this app has been written with some of the coolest tech out there nowadays. That includes, NodeJS, ES6 (with babel compiler), React, HTML5 and Bootstrap 4.
+For the fun of it, this app has been written with some of the coolest tech out there nowadays. That includes, NodeJS, ES6 (with babel compiler), React and HTML5.
 
 #Install
 npm i -g h5-play

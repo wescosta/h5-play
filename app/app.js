@@ -60,13 +60,19 @@ class App extends React.Component {
 
 	render(){
 		return (
-			<div>
-				<Playlist videos={this.state.videos} onClick={video => this.play(video, 0.1)}/>
-				<Player 
-					src={this.state.current.src} 
-					time={this.state.current.time} 
-					saveProgress={this.saveProgress}/>
-				<History videos={this.state.history} onClick={this.play}/>
+			<div className="wrapper">
+				<div>
+					<h1 className="h2">Videos</h1>
+					<Playlist videos={this.state.videos} onClick={video => this.play(video, 0.1)}/>
+				</div>
+				<div>
+					<Player 
+						src={this.state.current.src} 
+						time={this.state.current.time} 
+						saveProgress={this.saveProgress}/>
+
+					<History videos={this.state.history} onClick={this.play}/>
+				</div>
 			</div>
 		)
 	}
