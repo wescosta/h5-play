@@ -4,20 +4,20 @@ An experimental app which creates video playlists from a folder, keeps track of 
 
 For the fun of it, this app has been written with some of the coolest tech out there nowadays. That includes, NodeJS, ES6 (with babel compiler), React and HTML5.
 
-#Install
+# Install
 npm i -g h5-play
 
-#Usage
+# Usage
 h5-play ~/videos
 
 On Windows, that may look like this
 
 h5-play C:\Users\Myself\Videos
 
-#Accesibility and keyboard shortcuts
+## Accesibility and keyboard shortcuts
 Once you run the application, your browser will open with a video playlist, which is accessible thru the keyboard.
 
-##Controls for the current playing video
+## Controls for the current playing video
 - Enter: Fullscreen mode
 - Space bar: Play and stop
 - Left arrow: Seek backwards
